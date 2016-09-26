@@ -5,7 +5,7 @@ import java.awt.Color;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 
-public class Test {
+public class Main {
 	//菜单栏微信坐标
 	static int wx_x = 240;
 	static int wx_y = 1055;
@@ -19,7 +19,7 @@ public class Test {
 	static int dy_icon_start_x = 380;
 	static int dy_icon_start_y = 95;
 	//相邻公众号坐标差
-	static int dy_icon_plus_x = 70;
+	static float dy_icon_plus_x = 72.5f;
 	//两排公众号坐标差
 	static int dy_icon_plus_y = 115;
 	//公众号点开页面“查看历史消息” 相对坐标偏移
@@ -30,7 +30,7 @@ public class Test {
 	static int list_cancel_y = 155;
 	
 	//默认停顿时间
-	static int default_stop_time = 200;
+	static int default_stop_time = 100;
 	//一行公众号数量
 	static int row_count = 21;
 	//默认判断颜色范围
@@ -48,7 +48,7 @@ public class Test {
         int dy_icon_x = dy_icon_start_x;
         int dy_icon_y = dy_icon_start_y;
         //挨个点击公众号，打开公众号信息页，点击“查看历史消息”，然后点击“x”
-        for (int i = 1; i <= 5; i++) {
+        for (int i = 1; i <= 3; i++) {
         	//每个号点4次，因为“查看历史消息”有4种位置
         	for (int j = 0; j < yl_y.length; j++) {
                 
@@ -75,7 +75,7 @@ public class Test {
                 robot.mousePress(KeyEvent.BUTTON1_MASK);  
                 robot.mouseRelease(KeyEvent.BUTTON1_MASK);
                 
-                robot.delay(default_stop_time); 
+                robot.delay(1000); 
                 
                 //“x” 按钮
                 robot.mouseMove(list_cancel_x, list_cancel_y);
